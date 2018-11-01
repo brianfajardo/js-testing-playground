@@ -1,21 +1,4 @@
-const { sum } = require('./math');
-
-test('sum should add two numbers', () => {
-  const result = sum(5, 4);
-  const expected = 9;
-
-  expect(result).toEqual(expected);
-});
-
-function test(title, callback) {
-  try {
-    callback();
-    console.log(`✅ ${title}`);
-  } catch (error) {
-    console.log(`❌ ${title}`);
-    console.error(error);
-  }
-}
+// Example usage: expect(VALUE).toEqual(EXPECTED_VALUE)
 
 function expect(result) {
   if (!result) {
@@ -55,3 +38,5 @@ function expect(result) {
     },
   };
 }
+
+module.exports = expect;
