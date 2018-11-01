@@ -1,12 +1,21 @@
 const { sum } = require('./math');
 
-const result = sum(5, 4);
-const expected = 9;
+test('sum should add two numbers', () => {
+  const result = sum(5, 4);
+  const expected = 9;
 
-expect(result).toEqual(expected); // Throws error!
-expect('hello world').toBeString(); // Pass
-expect(15).toBeNumber(); // Pass
-expect(3).toBeLessThan(5); // Pass
+  expect(result).toEqual(expected);
+});
+
+function test(title, callback) {
+  try {
+    callback();
+    console.log(`✅ ${title}`);
+  } catch (error) {
+    console.log(`❌ ${title}`);
+    console.error(error);
+  }
+}
 
 function expect(result) {
   if (!result) {
